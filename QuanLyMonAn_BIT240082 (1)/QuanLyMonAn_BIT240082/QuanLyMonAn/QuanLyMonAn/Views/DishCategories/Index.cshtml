@@ -1,0 +1,35 @@
+@model List<DishCategory_BIT240082>
+@{
+    ViewData["Title"] = Localizer["Categories"];
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>@Localizer["Categories"]</h2>
+    <a class="btn btn-success" asp-action="Create">+ @Localizer["Create New"]</a>
+</div>
+
+<table class="table table-hover align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>@Localizer["Category Name"]</th>
+            <th>@Localizer["Description"]</th>
+            <th>@Localizer["Dish Count"]</th>
+            <th>@Localizer["Actions"]</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cat in Model)
+        {
+            <tr>
+                <td>@cat.Name</td>
+                <td>@cat.Description</td>
+                <td><span class="badge bg-info text-dark">@cat.Dishes.Count</span></td>
+                <td>
+                    <a class="btn btn-sm btn-outline-info" asp-action="Details" asp-route-id="@cat.Id">@Localizer["Details"]</a>
+                    <a class="btn btn-sm btn-outline-warning" asp-action="Edit" asp-route-id="@cat.Id">@Localizer["Edit"]</a>
+                    <a class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@cat.Id">@Localizer["Delete"]</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,131 @@
+@model DishListViewModel
+@{
+    ViewData["Title"] = Localizer["Dishes"];
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>@Localizer["Dishes"]</h2>
+    <a class="btn btn-success" asp-action="Create">+ @Localizer["Create New"]</a>
+</div>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-danger">@Localizer[Model.ErrorMessage]</div>
+}
+
+<form method="get" asp-action="Index" class="card card-body bg-light mb-4">
+    <div class="row g-2">
+        <div class="col-md-3">
+            <label class="form-label small">@Localizer["Dish Name"]</label>
+            <input type="text" name="SearchName" value="@Model.SearchName" class="form-control"
+                   placeholder="@Localizer["Search by dish name..."]" />
+        </div>
+        <div class="col-md-2">
+            <label class="form-label small">@Localizer["Category"]</label>
+            <select name="CategoryId" asp-items="Model.Categories" class="form-select">
+                <option value="">@Localizer["All Categories"]</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label class="form-label small">@Localizer["Status"]</label>
+            <select name="IsAvailable" class="form-select">
+                <option value="">@Localizer["All Status"]</option>
+                <option value="true" selected="@(Model.IsAvailable == true)">@Localizer["Available"]</option>
+                <option value="false" selected="@(Model.IsAvailable == false)">@Localizer["Unavailable"]</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label class="form-label small">@Localizer["Min Price"]</label>
+            <input type="number" step="0.01" name="MinPrice" value="@Model.MinPrice" class="form-control" />
+        </div>
+        <div class="col-md-2">
+            <label class="form-label small">@Localizer["Max Price"]</label>
+            <input type="number" step="0.01" name="MaxPrice" value="@Model.MaxPrice" class="form-control" />
+        </div>
+        <div class="col-md-1 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100">@Localizer["Search"]</button>
+        </div>
+    </div>
+    <div class="row g-2 mt-1">
+        <div class="col-md-3">
+            <label class="form-label small">@Localizer["Sort By"]</label>
+            <select name="SortBy" class="form-select">
+                <option value="price_asc" selected="@(Model.SortBy == "price_asc" || Model.SortBy == null)">@Localizer["Price: Low to High"]</option>
+                <option value="price_desc" selected="@(Model.SortBy == "price_desc")">@Localizer["Price: High to Low"]</option>
+                <option value="prep_asc" selected="@(Model.SortBy == "prep_asc")">@Localizer["Preparation Time: Shortest First"]</option>
+            </select>
+        </div>
+        <div class="col-md-2 d-flex align-items-end">
+            <a asp-action="Index" class="btn btn-outline-secondary w-100">@Localizer["Clear Filters"]</a>
+        </div>
+    </div>
+</form>
+
+@if (!Model.Dishes.Any() && string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-info">@Localizer["No dishes found matching your criteria."]</div>
+}
+else if (Model.Dishes.Any())
+{
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th></th>
+                    <th>@Localizer["Dish Name"]</th>
+                    <th>@Localizer["Category"]</th>
+                    <th>@Localizer["Price"]</th>
+                    <th>@Localizer["Classification"]</th>
+                    <th>@Localizer["Status"]</th>
+                    <th>@Localizer["Actions"]</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var dish in Model.Dishes)
+                {
+                    var thumb = dish.DishImages.FirstOrDefault(i => i.IsThumbnail) ?? dish.DishImages.FirstOrDefault();
+                    <tr>
+                        <td style="width:64px">
+                            @if (thumb != null)
+                            {
+                                <img src="@thumb.ImageUrl" class="rounded" style="width:56px;height:56px;object-fit:cover" />
+                            }
+                            else
+                            {
+                                <div class="bg-secondary bg-opacity-25 rounded d-flex align-items-center justify-content-center" style="width:56px;height:56px;font-size:1.3rem;">🍽️</div>
+                            }
+                        </td>
+                        <td>@dish.Name</td>
+                        <td>@dish.DishCategory?.Name</td>
+                        <td>@dish.Price.ToString("N0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN")) ₫</td>
+                        <td>
+                            @if (dish.PreparationClassification == "Quick")
+                            {
+                                <span class="badge bg-success">@Localizer["Quick"]</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">@Localizer["Regular"]</span>
+                            }
+                        </td>
+                        <td>
+                            @if (dish.IsAvailable)
+                            {
+                                <span class="badge bg-primary">@Localizer["Available"]</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">@Localizer["Unavailable"]</span>
+                            }
+                        </td>
+                        <td>
+                            <a class="btn btn-sm btn-outline-info" asp-action="Details" asp-route-id="@dish.Id">@Localizer["Details"]</a>
+                            <a class="btn btn-sm btn-outline-warning" asp-action="Edit" asp-route-id="@dish.Id">@Localizer["Edit"]</a>
+                            <a class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@dish.Id">@Localizer["Delete"]</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

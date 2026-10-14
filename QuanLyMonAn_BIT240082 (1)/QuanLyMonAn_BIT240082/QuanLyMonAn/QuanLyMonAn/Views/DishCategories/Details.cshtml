@@ -1,0 +1,31 @@
+@model DishCategory_BIT240082
+@{
+    ViewData["Title"] = Localizer["Details"];
+}
+
+<h2>@Model.Name</h2>
+<p class="text-muted">@Model.Description</p>
+
+<h4>@Localizer["Dishes"] (@Model.Dishes.Count)</h4>
+<ul class="list-group mb-3">
+    @foreach (var dish in Model.Dishes)
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a asp-controller="Dishes" asp-action="Details" asp-route-id="@dish.Id">@dish.Name</a>
+            <span>
+                @dish.Price.ToString("N0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN")) ₫
+                @if (dish.IsAvailable)
+                {
+                    <span class="badge bg-primary ms-2">@Localizer["Available"]</span>
+                }
+                else
+                {
+                    <span class="badge bg-danger ms-2">@Localizer["Unavailable"]</span>
+                }
+            </span>
+        </li>
+    }
+</ul>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">@Localizer["Edit"]</a>
+<a asp-action="Index" class="btn btn-secondary">@Localizer["Back to List"]</a>

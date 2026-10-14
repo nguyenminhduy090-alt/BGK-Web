@@ -1,0 +1,22 @@
+@model Dish_BIT240082
+@{
+    ViewData["Title"] = Localizer["Delete Dish"];
+}
+
+<h2>@Localizer["Delete Dish"]</h2>
+
+<div class="alert alert-warning" style="max-width:600px">
+    <p>@Localizer["Are you sure you want to delete the dish"] <strong>@Model.Name</strong>?</p>
+    <dl class="row mb-0">
+        <dt class="col-sm-4">@Localizer["Category"]</dt>
+        <dd class="col-sm-8">@Model.DishCategory?.Name</dd>
+        <dt class="col-sm-4">@Localizer["Price"]</dt>
+        <dd class="col-sm-8">@Model.Price.ToString("N0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN")) ₫</dd>
+    </dl>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">@Localizer["Delete"]</button>
+    <a asp-action="Index" class="btn btn-secondary">@Localizer["Cancel"]</a>
+</form>

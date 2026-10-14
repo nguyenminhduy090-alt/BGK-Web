@@ -1,0 +1,28 @@
+@model DishCategory_BIT240082
+@{
+    ViewData["Title"] = Localizer["Delete Category"];
+}
+
+<h2>@Localizer["Delete Category"]</h2>
+
+@if (Model.Dishes.Any())
+{
+    <div class="alert alert-danger">
+        <strong>@Localizer["Cannot delete category"]:</strong>
+        @Localizer["This category still has dishes using it and cannot be deleted."]
+        (@Model.Dishes.Count @Localizer["Dishes"].ToString().ToLower())
+    </div>
+    <a asp-action="Index" class="btn btn-secondary">@Localizer["Back to List"]</a>
+}
+else
+{
+    <div class="alert alert-warning" style="max-width:600px">
+        <p>@Localizer["Are you sure you want to delete the category"] <strong>@Model.Name</strong>?</p>
+    </div>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">@Localizer["Delete"]</button>
+        <a asp-action="Index" class="btn btn-secondary">@Localizer["Cancel"]</a>
+    </form>
+}

@@ -1,0 +1,322 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xsd:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xsd:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xsd:string" ns1:Ordinal="4" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Dish Management">
+    <value>Quản lý món ăn</value>
+  </data>
+  <data name="Dishes">
+    <value>Món ăn</value>
+  </data>
+  <data name="Categories">
+    <value>Loại món</value>
+  </data>
+  <data name="Language">
+    <value>Ngôn ngữ</value>
+  </data>
+  <data name="Create New">
+    <value>Tạo mới</value>
+  </data>
+  <data name="Edit">
+    <value>Sửa</value>
+  </data>
+  <data name="Details">
+    <value>Chi tiết</value>
+  </data>
+  <data name="Delete">
+    <value>Xóa</value>
+  </data>
+  <data name="Save">
+    <value>Lưu</value>
+  </data>
+  <data name="Cancel">
+    <value>Hủy</value>
+  </data>
+  <data name="Back to List">
+    <value>Quay lại danh sách</value>
+  </data>
+  <data name="Search">
+    <value>Tìm kiếm</value>
+  </data>
+  <data name="Filter">
+    <value>Lọc</value>
+  </data>
+  <data name="Clear Filters">
+    <value>Xóa bộ lọc</value>
+  </data>
+  <data name="Confirm">
+    <value>Xác nhận</value>
+  </data>
+  <data name="Are you sure you want to delete this?">
+    <value>Bạn có chắc muốn xóa mục này?</value>
+  </data>
+  <data name="Dish Name">
+    <value>Tên món</value>
+  </data>
+  <data name="Category">
+    <value>Loại món</value>
+  </data>
+  <data name="Price">
+    <value>Giá</value>
+  </data>
+  <data name="Preparation Time">
+    <value>Thời gian chế biến</value>
+  </data>
+  <data name="Status">
+    <value>Trạng thái</value>
+  </data>
+  <data name="Classification">
+    <value>Phân loại</value>
+  </data>
+  <data name="Actions">
+    <value>Thao tác</value>
+  </data>
+  <data name="Search by dish name...">
+    <value>Tìm theo tên món...</value>
+  </data>
+  <data name="All Categories">
+    <value>Tất cả loại món</value>
+  </data>
+  <data name="All Status">
+    <value>Tất cả trạng thái</value>
+  </data>
+  <data name="Available">
+    <value>Đang bán</value>
+  </data>
+  <data name="Unavailable">
+    <value>Ngừng bán</value>
+  </data>
+  <data name="Min Price">
+    <value>Giá từ</value>
+  </data>
+  <data name="Max Price">
+    <value>Giá đến</value>
+  </data>
+  <data name="Sort By">
+    <value>Sắp xếp</value>
+  </data>
+  <data name="Price: Low to High">
+    <value>Giá: Thấp đến cao</value>
+  </data>
+  <data name="Price: High to Low">
+    <value>Giá: Cao đến thấp</value>
+  </data>
+  <data name="Preparation Time: Shortest First">
+    <value>Thời gian chế biến: Ngắn nhất trước</value>
+  </data>
+  <data name="Quick">
+    <value>Nhanh</value>
+  </data>
+  <data name="Regular">
+    <value>Thông thường</value>
+  </data>
+  <data name="No dishes found matching your criteria.">
+    <value>Không tìm thấy món ăn phù hợp.</value>
+  </data>
+  <data name="Name">
+    <value>Tên</value>
+  </data>
+  <data name="Description">
+    <value>Mô tả</value>
+  </data>
+  <data name="Is Available">
+    <value>Đang bán</value>
+  </data>
+  <data name="Select a category">
+    <value>Chọn loại món</value>
+  </data>
+  <data name="Create Dish">
+    <value>Tạo món ăn</value>
+  </data>
+  <data name="Edit Dish">
+    <value>Sửa món ăn</value>
+  </data>
+  <data name="Delete Dish">
+    <value>Xóa món ăn</value>
+  </data>
+  <data name="Category Name">
+    <value>Tên loại món</value>
+  </data>
+  <data name="Dish Count">
+    <value>Số món</value>
+  </data>
+  <data name="Create Category">
+    <value>Tạo loại món</value>
+  </data>
+  <data name="Edit Category">
+    <value>Sửa loại món</value>
+  </data>
+  <data name="Delete Category">
+    <value>Xóa loại món</value>
+  </data>
+  <data name="Images">
+    <value>Hình ảnh</value>
+  </data>
+  <data name="Add Image">
+    <value>Thêm ảnh</value>
+  </data>
+  <data name="Image URL">
+    <value>Đường dẫn ảnh</value>
+  </data>
+  <data name="Set as Thumbnail">
+    <value>Đặt làm ảnh đại diện</value>
+  </data>
+  <data name="Thumbnail">
+    <value>Ảnh đại diện</value>
+  </data>
+  <data name="No images yet for this dish.">
+    <value>Món này chưa có ảnh nào.</value>
+  </data>
+  <data name="Set as thumbnail when adding">
+    <value>Đặt làm ảnh đại diện khi thêm</value>
+  </data>
+  <data name="Not Found">
+    <value>Không tìm thấy</value>
+  </data>
+  <data name="The item you are looking for does not exist or has been deleted.">
+    <value>Mục bạn tìm không tồn tại hoặc đã bị xóa.</value>
+  </data>
+  <data name="Minimum price cannot be negative.">
+    <value>Giá tối thiểu không được âm.</value>
+  </data>
+  <data name="Maximum price cannot be negative.">
+    <value>Giá tối đa không được âm.</value>
+  </data>
+  <data name="Minimum price cannot be greater than maximum price.">
+    <value>Giá tối thiểu không được lớn hơn giá tối đa.</value>
+  </data>
+  <data name="Dish name is required.">
+    <value>Tên món ăn không được để trống.</value>
+  </data>
+  <data name="Category name is required.">
+    <value>Tên loại món không được để trống.</value>
+  </data>
+  <data name="Price is required.">
+    <value>Giá là bắt buộc.</value>
+  </data>
+  <data name="Price must be greater than 0.">
+    <value>Giá phải lớn hơn 0.</value>
+  </data>
+  <data name="Preparation time is required.">
+    <value>Thời gian chế biến là bắt buộc.</value>
+  </data>
+  <data name="Preparation time must be greater than 0.">
+    <value>Thời gian chế biến phải lớn hơn 0.</value>
+  </data>
+  <data name="Please select a category.">
+    <value>Vui lòng chọn một loại món.</value>
+  </data>
+  <data name="Selected category does not exist.">
+    <value>Loại món đã chọn không tồn tại.</value>
+  </data>
+  <data name="A dish with this name already exists in this category.">
+    <value>Đã tồn tại món ăn trùng tên trong loại món này.</value>
+  </data>
+  <data name="Dish name must be at most 150 characters.">
+    <value>Tên món ăn tối đa 150 ký tự.</value>
+  </data>
+  <data name="Category name must be at most 100 characters.">
+    <value>Tên loại món tối đa 100 ký tự.</value>
+  </data>
+  <data name="Description must be at most 500 characters.">
+    <value>Mô tả tối đa 500 ký tự.</value>
+  </data>
+  <data name="Description must be at most 1000 characters.">
+    <value>Mô tả tối đa 1000 ký tự.</value>
+  </data>
+  <data name="Image URL is required.">
+    <value>Đường dẫn ảnh không được để trống.</value>
+  </data>
+  <data name="Cannot delete category">
+    <value>Không thể xóa loại món</value>
+  </data>
+  <data name="This category still has dishes using it and cannot be deleted.">
+    <value>Loại món này vẫn còn món ăn đang sử dụng, không thể xóa.</value>
+  </data>
+  <data name="Are you sure you want to delete the category">
+    <value>Bạn có chắc muốn xóa loại món</value>
+  </data>
+  <data name="Are you sure you want to delete the dish">
+    <value>Bạn có chắc muốn xóa món ăn</value>
+  </data>
+  <data name="Dish created successfully." xml:space="preserve">
+    <value>Đã tạo món ăn thành công.</value>
+  </data>
+  <data name="Dish updated successfully." xml:space="preserve">
+    <value>Đã cập nhật món ăn thành công.</value>
+  </data>
+  <data name="Dish deleted successfully." xml:space="preserve">
+    <value>Đã xóa món ăn thành công.</value>
+  </data>
+  <data name="Category created successfully." xml:space="preserve">
+    <value>Đã tạo loại món thành công.</value>
+  </data>
+  <data name="Category updated successfully." xml:space="preserve">
+    <value>Đã cập nhật loại món thành công.</value>
+  </data>
+  <data name="Category deleted successfully." xml:space="preserve">
+    <value>Đã xóa loại món thành công.</value>
+  </data>
+  <data name="Image added successfully." xml:space="preserve">
+    <value>Đã thêm ảnh thành công.</value>
+  </data>
+  <data name="Image deleted." xml:space="preserve">
+    <value>Đã xóa ảnh.</value>
+  </data>
+  <data name="Thumbnail updated." xml:space="preserve">
+    <value>Đã cập nhật ảnh đại diện.</value>
+  </data>
+  <data name="Image URL must be at most 500 characters." xml:space="preserve">
+    <value>Đường dẫn ảnh tối đa 500 ký tự.</value>
+  </data>
+  <data name="Cannot delete this category because it is still referenced by other data." xml:space="preserve">
+    <value>Không thể xóa loại món này vì vẫn đang được dữ liệu khác sử dụng.</value>
+  </data>
+  <data name="Cannot delete category &quot;{0}&quot; because it still has {1} dish(es) using it." xml:space="preserve">
+    <value>Không thể xóa loại món "{0}" vì vẫn còn {1} món ăn đang sử dụng.</value>
+  </data>
+  <data name="min" xml:space="preserve">
+    <value>phút</value>
+  </data>
+  <data name="Image URL (optional)" xml:space="preserve">
+    <value>Đường dẫn ảnh (không bắt buộc)</value>
+  </data>
+  <data name="This image will be used as the dish thumbnail." xml:space="preserve">
+    <value>Ảnh này sẽ được dùng làm ảnh đại diện của món.</value>
+  </data>
+  <data name="Please enter a valid HTTP or HTTPS image URL." xml:space="preserve">
+    <value>Vui lòng nhập đường dẫn ảnh HTTP hoặc HTTPS hợp lệ.</value>
+  </data>
+  <data name="Unable to save the dish. Please check the data and try again." xml:space="preserve">
+    <value>Không thể lưu món ăn. Vui lòng kiểm tra thông tin và thử lại.</value>
+  </data>
+</root>
